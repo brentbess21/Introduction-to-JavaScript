@@ -20,6 +20,11 @@ Do the following:
    HINT: no function required
 */
 
+let votingAge = 18
+
+if(votingAge >=18){
+  console.log(true);
+}
 
 
 /*
@@ -32,8 +37,6 @@ Do the following:
 
    HINT: no function required
 */
-
-
 
 
 
@@ -60,9 +63,10 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-  /*add your code here*/
+function multiply(a, b){
+  return a * b 
 }
+console.log("Task 1d - " + multiply(9,2));
 
 
 
@@ -76,10 +80,10 @@ Do the following:
  3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-  /*add your code here*/
+function dogYears(age){
+  return age * 7
 }
-
+console.log("Task 2 - " + dogYears(32));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -109,10 +113,28 @@ Puppies less than 1 year
 NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-  /*add your code here*/
+function hungryDog(weight, age){
+  if(age >= 1 && weight <= 5){
+    return .05 * weight
+  } else if (age >= 1 && weight >= 6 && weight <= 10){
+    return .04 * weight 
+  } else if (age >= 1 && weight >= 11 && weight <= 15){
+    return .03 * weight
+  } else if (age>= 1 && weight>15){
+    return .02 * weight
+    //puppies
+  } else if (age<.167){
+    return 0
+  }else if (age >= .167 && age<= .334){
+    return .10 * weight
+  } else if ( age > .334 && age <= .582){
+    return .05 * weight
+  } else if ( age > .582 && age < 1){
+    return .04 * weight
+  }
 }
 
+console.log("Task 3 - " + hungryDog(15,1));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -135,10 +157,30 @@ RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors
 
 HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
+let computer = Math.random()
+if(computer <= 0.34){
+  computer = "rock";
+} else if (computer <= 0.67){
+  computer = "paper";
+} else if (computer > 0.67){
+  computer = "scissors";
+}
 
 function game(user, computer){
-  /*add your code here*/
+  if(computer === user){
+    return "it's a tie";
+  } else if (user === "rock" && computer === "scissors"){
+    return "you win!";
+  } else if (user === "paper" && computer ==="rock"){
+    return "you win!";
+  } else if (user === "scissors" && computer ==="paper"){
+    return "you win!";
+  } else {
+    return "you lose!";
+  }
 }
+
+console.log ("Taks 4 - " + game("paper",computer));
 
 
 
